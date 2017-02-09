@@ -94,7 +94,8 @@ You can add them at the end of the script.
 ### 6. Once configured, you can easily test on client's website by injecting your script into the console.
 
 Look for “atomex” in the network (for each page configured) and make sure the parameters are correct.
-![Alt text](/relative/path/to/atomex.png?raw=true "atomex")
+
+![Settings Window](/atomex.png)
 
 ### 7. Copy all the content to the Custom Events of the client under VeCapture Manager Profiles inside the function onTagPageLoad and add a timeout of 1ms.
 
