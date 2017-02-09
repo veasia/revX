@@ -106,7 +106,8 @@ Look for “atomex” in the network (for each page configured) and make sure th
       })(window)}
 ```
 It should look something like this. Please be aware that there might be other CustomEvents and other Settings. Do not remove them. Also be careful with the trailing comma in objects: last element in an object can’t have comma.
-![Alt text](/relative/path/to/capture.png?raw=true "capture")
+
+![Settings Window](/capture.png)
 
 Test again on staging and make sure there are no errors on client’s website.
 Then you can live the scripts and close the ticket.
