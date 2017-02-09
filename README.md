@@ -122,10 +122,10 @@ Then you can live the scripts and close the ticket.
 ### Version 1.0
 
 - It adds the revX pixel on different pages
-- Use a set of reusable functions
+- Use a set of re-usable functions
 
 
-### Known limitations from The Trade Desk
+### Known limitations 
 
 - Some parameters might not be present on client's website.
 - Extra work might be needed to configure some parameters.
