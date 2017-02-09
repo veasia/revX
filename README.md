@@ -1,4 +1,5 @@
 # revX
+
 main.js: Script to implement pixels for "revX"
 
 
@@ -15,7 +16,7 @@ revX pixel must be implemented if available on:
 - complete page
 
 
-#### 1. Modify the default settings (provided in the ticket) and replace with the correct values:
+#### 1. Modify the default settings (provided in the ticket) and replace it with the correct values:
 
 ```javascript
   clientId: 1234,
@@ -23,7 +24,8 @@ revX pixel must be implemented if available on:
 
 #### 2. Configure the URLs to identify the pages.  
 
-You can use a path or a selector to identify the page. (path will math with window.location.pathname)
+You can use a path or a selector to identify the page. (path value will do a comparaison with window.location.pathname value)
+
 ```javascript
 webpages:[{
             name: 'Homepage',
@@ -45,11 +47,13 @@ webpages:[{
 #### 3. Configure the parameters to send with the pixel.  
 
 You need to configure the below parameters (if available)
+
 - category/sub category pages: category/sub category id, category/sub category name
 - product pages: category/sub category id, category/sub category name, product name, product id, product price (before and after discount)
 - basket page: order amount, list of product id (array)
 - checkout page: order amount, list of product id (array)
 - complete page: order amount, order id, list of product id (array)
+
 Other parameters can be requested by trader (will be mentioned in the ticket)
  
 ```javascript
@@ -65,9 +69,9 @@ Other parameters can be requested by trader (will be mentioned in the ticket)
 ```
 #### 4.  Use helpers function to configure parameters
 
-Some re-usable have been added to the code such as:
+Some re-usable functions have been added to the code such as:
 
- 4.1. getValueSelector(N) 
+ 4.1. getValueBySelector(N) 
 
 returns innerHTML without spaces
 
@@ -77,7 +81,7 @@ returns a number from a path (url, src) or html element (input….), useful to g
 
  4.3. replaceValue(selector, replace1,replace2)
 
-to clean a string, useful to get correct currency
+used to clean a string
 
  4.4. getListProductId(selector,regex)
 
@@ -91,17 +95,17 @@ returns a global variable
 
 You can add them at the end of the script.
 
-### 6. Once configured, you can easily test on client's website by injecting your script into the console.
+#### 6. Once configured, you can easily test on client's website by injecting your script into the console.
 
 Look for “atomex” in the network (for each page configured) and make sure the parameters are correct.
 
 ![Settings Window](/atomex.png)
 
-### 7. Copy all the content to the Custom Events of the client under VeCapture Manager Profiles inside the function onTagPageLoad and add a timeout of 1ms.
+#### 7. Copy all the content to the Custom Events of the client under VeCapture Manager Profiles inside the function onTagPageLoad and add a timeout of 1ms.
 
 ```javascript
       {onTagPageLoad: (function(window) {
-      setTimeout(function(){  //content on the script here
+      setTimeout(function(){  //content of main.js here 
       },1);
       })(window)}
 ```
@@ -123,8 +127,8 @@ Then you can live the scripts and close the ticket.
 
 ### Known limitations from The Trade Desk
 
--  Some parameters might no be present on website
-- Some extra work might be needed to configure some parameters
+- Some parameters might not be present on client's website.
+- Extra work might be needed to configure some parameters.
 - This revX script was developed in a short time with few resources, revX is rarely used by Traders, if the demand is higher, we must consider to improve the script.
-- After implementation, tech should carefully make sure the script is not conflicting with client’s website
+- After implementation, tech should carefully make sure the script is not conflicting with client’s website.
 
