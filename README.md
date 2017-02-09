@@ -94,7 +94,7 @@ You can add them at the end of the script.
 ### 6. Once configured, you can easily test on client's website by injecting your script into the console.
 
 Look for “atomex” in the network (for each page configured) and make sure the parameters are correct.
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+![Alt text](/relative/path/to/atomex.png?raw=true "atomex")
 
 ### 7. Copy all the content to the Custom Events of the client under VeCapture Manager Profiles inside the function onTagPageLoad and add a timeout of 1ms.
 
@@ -105,7 +105,7 @@ Look for “atomex” in the network (for each page configured) and make sure th
       })(window)}
 ```
 It should look something like this. Please be aware that there might be other CustomEvents and other Settings. Do not remove them. Also be careful with the trailing comma in objects: last element in an object can’t have comma.
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+![Alt text](/relative/path/to/capture.png?raw=true "capture")
 
 Test again on staging and make sure there are no errors on client’s website.
 Then you can live the scripts and close the ticket.
@@ -115,14 +115,14 @@ Then you can live the scripts and close the ticket.
 
 ### Version 1.0
 
-• It adds the revX pixel on different pages
-• Use a set of reusable functions
+- It adds the revX pixel on different pages
+- Use a set of reusable functions
 
 
 ### Known limitations from The Trade Desk
 
-•  Some parameters might no be present on website
-• Some extra work might be needed to configure some parameters
-• This revX script was developed in a short time with few resources, revX is rarely used by Traders, if the demand is higher, we must consider to improve the script.
-• After implementation, tech should carefully make sure the script is not conflicting with client’s website
+-  Some parameters might no be present on website
+- Some extra work might be needed to configure some parameters
+- This revX script was developed in a short time with few resources, revX is rarely used by Traders, if the demand is higher, we must consider to improve the script.
+- After implementation, tech should carefully make sure the script is not conflicting with client’s website
 
