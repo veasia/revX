@@ -1,12 +1,12 @@
 # revX
-Script to implement pixels for "revX"
+main.js: Script to implement pixels for "revX"
 
 
 ## How to use by Tech
 
 ### Setup
 
-Revx pixel must be implemented if available on:
+revX pixel must be implemented if available on:
 - home page
 - category/sub category pages
 - product pages
