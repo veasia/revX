@@ -1,4 +1,4 @@
-# theTradeDesk
+# revX
 Script to implement pixels for "revX"
 
 
@@ -91,9 +91,10 @@ returns a global variable
 
 You can add them at the end of the script.
 
-### 6. Once configured, you can easily test by injecting your script into the console.
+### 6. Once configured, you can easily test on client's website by injecting your script into the console.
 
 Look for “atomex” in the network (for each page configured) and make sure the parameters are correct.
+![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
 
 ### 7. Copy all the content to the Custom Events of the client under VeCapture Manager Profiles inside the function onTagPageLoad and add a timeout of 1ms.
 
@@ -103,6 +104,8 @@ Look for “atomex” in the network (for each page configured) and make sure th
       },1);
       })(window)}
 ```
+It should look something like this. Please be aware that there might be other CustomEvents and other Settings. Do not remove them. Also be careful with the trailing comma in objects: last element in an object can’t have comma.
+![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
 
 Test again on staging and make sure there are no errors on client’s website.
 Then you can live the scripts and close the ticket.
