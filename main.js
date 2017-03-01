@@ -82,6 +82,8 @@
     };
 
 
+//DO NOT MODIFY --> Start
+
 var config = {
         getLog: function (t) { return 'RevX remarketing tag ' + t + ' page';},
         getScriptUrl: function (id) {return document.location.protocol + '//cdn.atomex.net/static/js/pxs/' + id + '/ast.js';},
@@ -150,8 +152,6 @@ var config = {
 
 
     function waitForGlobaVar(type) {
-
-
           switch(type){
             case 1:  //return category id
            
@@ -160,9 +160,8 @@ var config = {
                     }
                     return '';
                 break;
-
+        }
     }
-}
 
     function needsToRun(conf) {
         var url;
@@ -173,7 +172,6 @@ var config = {
         }
         return false;
     }
-
 
     //HELPERS
     function matchWebPage(objectUrl) {
@@ -226,6 +224,52 @@ var config = {
             return element.innerHTML.trim();
         }
         return '';
+    }
+
+
+
+    function replaceValue(selector,replace1,replace2){
+        var element = getValueBySelector(selector);
+        if (element && replace2){
+            element = element.replace(replace1,replace2);
+            return element;
+        }
+          if (element){
+            element = element.replace(replace1,'');
+            return element;
+        }
+    }
+
+    function createJS(url) {
+        var ast = document.createElement('script'); 
+        ast.type = "text/javascript";
+        ast.src = url;
+        document.body.appendChild(ast);
+    }
+
+    function createPixel(url) {
+        var ast = document.createElement('img');
+        ast.width = "1"; 
+        ast.height = "1";    
+        ast.src = url;
+        document.body.appendChild(ast);   
+    }
+
+    function getAsyncValue(object, key, callback) {
+        if(object && object[key]) {
+            return callback(object[key]);
+        } else{
+            var timerId = window.setInterval(function(){
+                if(object && object[key]) {
+                    clerInterval(timerId);
+                    return callback(object[key]);
+                }
+            },500); 
+        }
+    }
+
+    function getDevice(){
+        return ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) ? 'm' : 'd';
     }
 
     function getNumberFromHref(type,selector){
@@ -323,47 +367,5 @@ var config = {
         return '';
     }
 
+//DO NOT MODIFY --> End, can add some custom functions here
 
-    function replaceValue(selector,replace1,replace2){
-        var element = getValueBySelector(selector);
-        if (element && replace2){
-            element = element.replace(replace1,replace2);
-            return element;
-        }
-          if (element){
-            element = element.replace(replace1,'');
-            return element;
-        }
-    }
-
-    function createJS(url) {
-        var ast = document.createElement('script'); 
-        ast.type = "text/javascript";
-        ast.src = url;
-        document.body.appendChild(ast);
-    }
-
-    function createPixel(url) {
-        var ast = document.createElement('img');
-        ast.width = "1"; 
-        ast.height = "1";    
-        ast.src = url;
-        document.body.appendChild(ast);   
-    }
-
-    function getAsyncValue(object, key, callback) {
-        if(object && object[key]) {
-            return callback(object[key]);
-        } else{
-            var timerId = window.setInterval(function(){
-                if(object && object[key]) {
-                    clerInterval(timerId);
-                    return callback(object[key]);
-                }
-            },500); 
-        }
-    }
-
-    function getDevice(){
-        return ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) ? 'm' : 'd';
-    }
