@@ -93,7 +93,17 @@ returns a global variable
 
 #### 5.  Add any other additional functions needed to configure parameters
 
-You can add them at the end of the script.
+You can create a custom function (ie myCustomFuntion) and add it at the end of the script. Then you can directly call it as below:
+
+```javascript
+     atm_params: {
+                f: 'c',
+             // c: myCustomFuntion(".product-info [itemprop='brand']")  //category id
+             oprc: myCustomFuntion(".product-box-content [itemprop='offers'] [itemprop='price']"),  //original price
+               id: myCustomFuntion('#product-id') //sku
+            }
+
+```
 
 #### 6. Once configured, you can easily test on client's website by injecting your script into the console.
 
